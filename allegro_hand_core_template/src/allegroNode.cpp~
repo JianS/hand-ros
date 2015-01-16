@@ -22,7 +22,9 @@
 #include <boost/date_time.hpp>
 #include <boost/thread/locks.hpp>
 
-#include "ros/ros.h"
+#include "ros/ros.h" 
+// dd d d d d d d d d 
+// hahahahah
 #include "ros/service.h"
 #include "ros/service_server.h"
 #include "sensor_msgs/JointState.h"
@@ -187,7 +189,7 @@ void timerCallback(const ros::TimerEvent& event)
 /*  ================================= 
 	=  COMPUTE CONTROL TORQUE HERE  =   		// current_position_filtered --> desired_torque //
 	================================= */	
-	forceResult = TorqueFeedback(current_position_filtered[4], current_position_filtered[5], current_position_filtered[6], current_position_filtered[7], nnnnn-320, 660.0,  660.0, 660.0);
+	forceResult = TorqueFeedback(current_position_filtered[4], current_position_filtered[5], current_position_filtered[6], current_position_filtered[7], nnnnn-320, 660.0/3,  660.0/3, 660.0/3);
 	desired_torque[4] = forceResult(0, 0);
 	desired_torque[5] = forceResult(1, 0);
 	desired_torque[6] = forceResult(2, 0);
